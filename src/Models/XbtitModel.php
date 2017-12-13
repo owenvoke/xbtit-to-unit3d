@@ -17,6 +17,18 @@ class XbtitModel
 
     public function importAll()
     {
+        $gazelleConnection = $this->capsule->getConnection('xbtit');
+        $all = $gazelleConnection
+            ->table($this->tables['xbtit'])
+            ->get(array_keys($this->columns));
+
+        foreach ($all as $row) {
+            $this->processRow($row);
+        }
+    }
+
+    protected function processRow(\stdClass $row)
+    {
         //
     }
 }
