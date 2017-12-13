@@ -50,14 +50,14 @@ class FromXbtit extends Command
     {
         $capsule = $this->getCapsule();
 
-        if (!$capsule->schema()->hasTable('xbtit_users')) {
+        if (!$capsule->schema('xbtit')->hasTable('xbtit_users')) {
             throw new \ErrorException('XBTIT user tables missing.');
         }
 
         $users = new User($capsule);
         $users->importAll();
 
-        if (!$capsule->schema()->hasTable('xbtit_files')) {
+        if (!$capsule->schema('xbtit')->hasTable('xbtit_files')) {
             throw new \ErrorException('XBTIT torrent tables missing.');
         }
 
@@ -80,7 +80,7 @@ class FromXbtit extends Command
                 'collation' => 'utf8_unicode_ci',
                 'prefix'    => $this->option('prefix'),
             ],
-            'gazelle'
+            'xbtit'
         );
 
         $capsule->addConnection(
