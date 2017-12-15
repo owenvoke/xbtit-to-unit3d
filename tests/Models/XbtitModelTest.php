@@ -3,7 +3,7 @@
 namespace pxgamer\XbtitToUnit3d\Models;
 
 use Illuminate\Database\Capsule\Manager;
-use PHPUnit\Framework\TestCase;
+use Orchestra\Testbench\TestCase;
 
 class XbtitModelTest extends TestCase
 {
