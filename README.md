@@ -25,12 +25,12 @@ Via Composer
 $ composer require pxgamer/xbtit-to-unit3d
 ```
 
-## Usage
-
 To install, just:
 - Require this package from your [UNIT3D][unit3d] install.
 - Using Laravel <5.5, add the `pxgamer\XbtitToUnit3d\ServiceProvider::class` to your [providers].
 - Add an empty `imports` entry to your database config.
+
+## Usage
 
 For instructions on usage, run:
 
