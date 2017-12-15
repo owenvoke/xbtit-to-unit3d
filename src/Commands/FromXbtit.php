@@ -70,7 +70,7 @@ class FromXbtit extends Command
         $database = DB::connection('imports');
 
         Imports::importTable($database, 'User', 'users', User::class);
-        Imports::importTable($database, 'Torrent', 'torrents', Torrent::class);
+        Imports::importTable($database, 'Torrent', 'files', Torrent::class);
     }
 
     /**
