@@ -34,11 +34,6 @@ class FromXbtit extends Command
     protected $description = 'Import data from an XBTIT instance to UNIT3D.';
 
     /**
-     * @var array
-     */
-    protected $results = [];
-
-    /**
      * Create a new command instance.
      *
      * @return void
