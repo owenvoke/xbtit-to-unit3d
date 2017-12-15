@@ -51,7 +51,6 @@ class Mapping
             'size'        => $data->size,
             'announce'    => $data->announce_url,
             'description' => $data->comment,
-            'user_id'     => $data->uploader,
             'seeders'     => $data->seeds,
             'leechers'    => $data->leechers,
             'created_at'  => Carbon::createFromTimestamp(strtotime($data->data)),
