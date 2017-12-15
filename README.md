@@ -27,7 +27,10 @@ $ composer require pxgamer/xbtit-to-unit3d
 
 ## Usage
 
-To install, just require this package from your [UNIT3D][unit3d] install.
+To install, just:
+- Require this package from your [UNIT3D][unit3d] install.
+- Using Laravel <5.5, add the `pxgamer\XbtitToUnit3d\ServiceProvider::class` to your [providers].
+- Add an empty `imports` entry to your database config.
 
 For instructions on usage, run:
 
@@ -64,6 +67,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [unit3d]: https://github.com/unit3d/unit3d
 [xbtit]: https://github.com/btiteam/xbtit
+[providers]: https://laravel.com/docs/master/providers#registering-providers
 
 [ico-version]: https://img.shields.io/packagist/v/pxgamer/xbtit-to-unit3d.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
