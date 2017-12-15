@@ -3,7 +3,7 @@
 namespace pxgamer\XbtitToUnit3d\Functionality;
 
 use Carbon\Carbon;
-use PHPUnit\Framework\TestCase;
+use Orchestra\Testbench\TestCase;
 
 /**
  * Class MappingTest.
