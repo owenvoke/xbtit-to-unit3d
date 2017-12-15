@@ -5,12 +5,18 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class MappingTest.
+ */
 class MappingTest extends TestCase
 {
     const TEST_DATE_STRING = '2017-10-15 06:06:06';
     const TEST_STRING = 'SpaghettiTest';
     const TEST_HASH = 'f87b9feb33b6744f0bd1cb53b6fc1f23';
 
+    /**
+     * Test that the ::map() method works with a User instance.
+     */
     public function testMapUserIsSuccessful()
     {
         $data = new \stdClass();
@@ -35,6 +41,9 @@ class MappingTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $result['created_at']);
     }
 
+    /**
+     * Test that the ::map() method works with a Torrent instance.
+     */
     public function testMapTorrentIsSuccessful()
     {
         $data = new \stdClass();
