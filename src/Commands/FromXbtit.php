@@ -4,12 +4,13 @@ namespace pxgamer\XbtitToUnit3d\Commands;
 
 use App\Torrent;
 use App\User;
-use Carbon\Carbon;
 use Illuminate\Console\Command;
-use Illuminate\Database\Connection;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use pxgamer\XbtitToUnit3d\Functionality\Imports;
 
+/**
+ * Class FromXbtit
+ */
 class FromXbtit extends Command
 {
     /**
@@ -32,6 +33,9 @@ class FromXbtit extends Command
      */
     protected $description = 'Import data from an XBTIT instance to UNIT3D.';
 
+    /**
+     * @var array
+     */
     protected $results = [];
 
     /**
@@ -48,6 +52,7 @@ class FromXbtit extends Command
      * Execute the console command.
      *
      * @return mixed
+     *
      * @throws \ErrorException
      */
     public function handle()
@@ -69,75 +74,14 @@ class FromXbtit extends Command
 
         $database = DB::connection('imports');
 
-        $this->importTable($database, 'User', 'users', User::class);
-        $this->importTable($database, 'Torrent', 'torrents', Torrent::class);
+        Imports::importTable($database, 'User', 'users', User::class);
+        Imports::importTable($database, 'Torrent', 'torrents', Torrent::class);
     }
 
-    protected function importTable(Connection $database, string $type, string $oldTable, string $modelName)
-    {
-        if (!$database->getSchemaBuilder()->hasTable($oldTable)) {
-            throw new \ErrorException('`'.$oldTable.'` table missing.');
-        }
-
-        $oldData = $database->query()->select()->from($oldTable)->get();
-
-        foreach ($oldData->all() as $oldDataItem) {
-            $data = $this->map($type, $oldDataItem);
-
-            $this->results[$oldTable] = $this->import($modelName, $data);
-        }
-    }
-
-    public function map(string $type, \stdClass $data): array
-    {
-        return $this->{'map'.$type}($data);
-    }
-
-    public function mapUser(\stdClass $data): array
-    {
-        return [
-            'username'   => $data->username,
-            'password'   => $data->password,
-            'passkey'    => $data->salt,
-            'group_id'   => $data->id_level,
-            'email'      => $data->email,
-            'uploaded'   => $data->uploaded,
-            'downloaded' => $data->downloaded,
-            'image'      => $data->avatar,
-            'created_at' => Carbon::createFromTimestamp(strtotime($data->joined)),
-            'last_login' => Carbon::createFromTimestamp(strtotime($data->lastconnect)),
-        ];
-    }
-
-    public function mapTorrent(\stdClass $data): array
-    {
-        return [
-            'info_hash'   => $data->info_hash,
-            'name'        => $data->filename,
-            'size'        => $data->size,
-            'announce'    => $data->announce_url,
-            'description' => $data->comment,
-            'user_id'     => $data->uploader,
-            'seeders'     => $data->seeds,
-            'leechers'    => $data->leechers,
-            'created_at'  => Carbon::createFromTimestamp(strtotime($data->data)),
-            'updated_at'  => Carbon::createFromTimestamp(strtotime($data->lastupdate)),
-        ];
-    }
-
-    private function import(string $model, array $data = []): bool
-    {
-        /** @var Model $new */
-        $new = new $model();
-
-        foreach ($data as $item => $value) {
-            $new->$item = $value;
-        }
-
-        return $new->save();
-    }
-
-    private function checkRequired(array $options)
+    /**
+     * @param array $options
+     */
+    public function checkRequired(array $options)
     {
         $requiredOptions = [
             'database',

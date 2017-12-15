@@ -4,13 +4,25 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 
 use Carbon\Carbon;
 
+/**
+ * Class Mapping
+ */
 class Mapping
 {
+    /**
+     * @param string $type
+     * @param \stdClass $data
+     * @return array
+     */
     public static function map(string $type, \stdClass $data): array
     {
         return self::{'map'.$type}($data);
     }
 
+    /**
+     * @param \stdClass $data
+     * @return array
+     */
     public static function mapUser(\stdClass $data): array
     {
         return [
@@ -27,6 +39,10 @@ class Mapping
         ];
     }
 
+    /**
+     * @param \stdClass $data
+     * @return array
+     */
     public static function mapTorrent(\stdClass $data): array
     {
         return [

@@ -5,6 +5,9 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class Imports
+ */
 class Imports
 {
     /**
@@ -13,13 +16,13 @@ class Imports
      * @param string $oldTable
      * @param string $modelName
      *
-     * @return array
+     * @return int
      *
      * @throws \ErrorException
      */
-    public static function importTable(Connection $database, string $type, string $oldTable, string $modelName)
+    public static function importTable(Connection $database, string $type, string $oldTable, string $modelName): int
     {
-        $results = [];
+        $results = 0;
 
         if (!$database->getSchemaBuilder()->hasTable($oldTable)) {
             throw new \ErrorException('`'.$oldTable.'` table missing.');
@@ -30,12 +33,19 @@ class Imports
         foreach ($oldData->all() as $oldDataItem) {
             $data = Mapping::map($type, $oldDataItem);
 
-            $results[$oldTable] = self::import($modelName, $data);
+            if (self::import($modelName, $data)) {
+                $results++;
+            }
         }
 
         return $results;
     }
 
+    /**
+     * @param string $model
+     * @param array $data
+     * @return bool
+     */
     private static function import(string $model, array $data = []): bool
     {
         /** @var Model $new */
