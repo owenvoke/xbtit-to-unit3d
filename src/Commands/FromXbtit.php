@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use pxgamer\XbtitToUnit3d\Functionality\Imports;
 
 /**
- * Class FromXbtit
+ * Class FromXbtit.
  */
 class FromXbtit extends Command
 {
