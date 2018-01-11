@@ -28,7 +28,7 @@ class Mapping
         return [
             'username'   => $data->username,
             'password'   => $data->password ?? null,
-            'passkey'    => $data->salt ?? null,
+            'passkey'    => $data->pid ?? null,
             'group_id'   => $data->id_level ?? 1,
             'email'      => $data->email ?? null,
             'uploaded'   => $data->uploaded ?? 0,
