@@ -22,7 +22,7 @@ class MappingTest extends TestCase
         $data = new \stdClass();
         $data->username = self::TEST_STRING;
         $data->password = null;
-        $data->salt = null;
+        $data->pid = null;
         $data->id_level = 1;
         $data->email = null;
         $data->uploaded = 0;
