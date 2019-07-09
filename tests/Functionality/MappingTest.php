@@ -1,9 +1,10 @@
 <?php
 
-namespace pxgamer\XbtitToUnit3d\Functionality;
+namespace pxgamer\XbtitToUnit3d\Tests\Functionality;
 
 use Carbon\Carbon;
 use Orchestra\Testbench\TestCase;
+use pxgamer\XbtitToUnit3d\Functionality\Mapping;
 
 class MappingTest extends TestCase
 {
