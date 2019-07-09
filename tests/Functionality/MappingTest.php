@@ -1,23 +1,19 @@
 <?php
 
-namespace pxgamer\XbtitToUnit3d\Functionality;
+namespace pxgamer\XbtitToUnit3d\Tests\Functionality;
 
 use Carbon\Carbon;
 use Orchestra\Testbench\TestCase;
+use pxgamer\XbtitToUnit3d\Functionality\Mapping;
 
-/**
- * Class MappingTest.
- */
 class MappingTest extends TestCase
 {
-    const TEST_DATE_STRING = '2017-10-15 06:06:06';
-    const TEST_STRING = 'SpaghettiTest';
-    const TEST_HASH = 'f87b9feb33b6744f0bd1cb53b6fc1f23';
+    private const TEST_DATE_STRING = '2017-10-15 06:06:06';
+    private const TEST_STRING = 'SpaghettiTest';
+    private const TEST_HASH = 'f87b9feb33b6744f0bd1cb53b6fc1f23';
 
-    /**
-     * Test that the ::map() method works with a User instance.
-     */
-    public function testMapUserIsSuccessful()
+    /** @test */
+    public function itCanMapAUserInstance(): void
     {
         $data = new \stdClass();
         $data->username = self::TEST_STRING;
@@ -33,7 +29,7 @@ class MappingTest extends TestCase
 
         $result = Mapping::map('User', $data);
 
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $this->assertEquals(self::TEST_STRING, $result['username']);
         $this->assertNull($result['password']);
         $this->assertEquals(0, $result['uploaded']);
@@ -41,10 +37,8 @@ class MappingTest extends TestCase
         $this->assertInstanceOf(Carbon::class, $result['created_at']);
     }
 
-    /**
-     * Test that the ::map() method works with a Torrent instance.
-     */
-    public function testMapTorrentIsSuccessful()
+    /** @test */
+    public function itCanMapATorrentInstance(): void
     {
         $data = new \stdClass();
         $data->info_hash = self::TEST_HASH;
@@ -59,7 +53,7 @@ class MappingTest extends TestCase
 
         $result = Mapping::map('Torrent', $data);
 
-        $this->assertInternalType('array', $result);
+        $this->assertIsArray($result);
         $this->assertEquals(self::TEST_HASH, $result['info_hash']);
         $this->assertEquals(0, $result['size']);
         $this->assertNull($result['announce']);
