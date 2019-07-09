@@ -80,6 +80,7 @@ class FromXbtit extends Command
     {
         if ($this->option('ignore-users')) {
             $this->output->note('Ignoring users table');
+
             return;
         }
 
@@ -94,6 +95,7 @@ class FromXbtit extends Command
     {
         if ($this->option('ignore-torrents')) {
             $this->output->note('Ignoring torrents table');
+
             return;
         }
 
