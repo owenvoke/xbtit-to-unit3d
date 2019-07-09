@@ -4,9 +4,6 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 
 use Carbon\Carbon;
 
-/**
- * Class Mapping
- */
 class Mapping
 {
     /**
