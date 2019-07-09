@@ -1,6 +1,6 @@
 <?php
 
-namespace pxgamer\XbtitToUnit3d\Tests\Functionality;
+namespace pxgamer\XbtitToUnit3d\Tests;
 
 use Orchestra\Testbench\TestCase;
 use Illuminate\Foundation\Application;
