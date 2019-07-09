@@ -59,15 +59,15 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/pxgamer/xbtit-to-unit3d.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/pxgamer/xbtit-to-unit3d/master.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/HDInnovations/xbtit-to-unit3d/master.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/114135662/shield
-[ico-code-quality]: https://img.shields.io/codecov/c/github/pxgamer/xbtit-to-unit3d.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/codecov/c/github/HDInnovations/xbtit-to-unit3d.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/pxgamer/xbtit-to-unit3d.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/pxgamer/xbtit-to-unit3d
-[link-travis]: https://travis-ci.org/pxgamer/xbtit-to-unit3d
+[link-travis]: https://travis-ci.org/HDInnovations/xbtit-to-unit3d
 [link-styleci]: https://styleci.io/repos/114135662
-[link-code-quality]: https://codecov.io/gh/pxgamer/xbtit-to-unit3d
+[link-code-quality]: https://codecov.io/gh/HDInnovations/xbtit-to-unit3d
 [link-downloads]: https://packagist.org/packages/pxgamer/xbtit-to-unit3d
 [link-author]: https://github.com/pxgamer
 [link-contributors]: ../../contributors
