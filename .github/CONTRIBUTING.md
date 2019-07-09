@@ -2,7 +2,7 @@
 
 Contributions are **welcome** and will be fully **credited**.
 
-We accept contributions via Pull Requests on [Github](https://github.com/pxgamer/xbtit-to-unit3d).
+We accept contributions via Pull Requests on [Github](https://github.com/HDInnovations/xbtit-to-unit3d).
 
 ## Pull Requests
 
