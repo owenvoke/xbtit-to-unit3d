@@ -14,14 +14,14 @@ class FromXbtit extends Command
 {
     /** @var string The name and signature of the console command */
     protected $signature = 'unit3d:from-xbtit
-                            {--driver=mysql : The driver type to use (mysql, sqlsrv, etc.).}
-                            {--host=localhost : The hostname or IP.}
-                            {--database= : The database to select from.}
-                            {--username= : The database user.}
-                            {--password= : The database password.}
-                            {--prefix= : The database hostname or IP.}
-                            {--ignore-users : Ignore the users table when importing.}
-                            {--ignore-torrents : Ignore the torrents table when importing.}';
+                            {--driver=mysql : The driver type to use (mysql, sqlsrv, etc.)}
+                            {--host=localhost : The hostname or IP}
+                            {--database= : The database to select from}
+                            {--username= : The database user}
+                            {--password= : The database password}
+                            {--prefix= : The database hostname or IP}
+                            {--ignore-users : Ignore the users table when importing}
+                            {--ignore-torrents : Ignore the torrents table when importing}';
 
     /** @var string The console command description */
     protected $description = 'Import data from an XBTIT instance to UNIT3D';
