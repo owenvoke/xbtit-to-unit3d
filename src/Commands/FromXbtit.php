@@ -12,7 +12,7 @@ use pxgamer\XbtitToUnit3d\Functionality\Imports;
 
 class FromXbtit extends Command
 {
-    /* @var string The name and signature of the console command */
+    /** @var string The name and signature of the console command */
     protected $signature = 'unit3d:from-xbtit
                             {--driver=mysql : The driver type to use (mysql, sqlsrv, etc.).}
                             {--host=localhost : The hostname or IP.}
@@ -23,7 +23,7 @@ class FromXbtit extends Command
                             {--ignore-users : Ignore the users table when importing.}
                             {--ignore-torrents : Ignore the torrents table when importing.}';
 
-    /* @var string The console command description */
+    /** @var string The console command description */
     protected $description = 'Import data from an XBTIT instance to UNIT3D';
 
     /**
