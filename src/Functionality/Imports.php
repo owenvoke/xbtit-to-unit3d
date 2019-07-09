@@ -5,9 +5,6 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 use Illuminate\Database\Connection;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Imports
- */
 class Imports
 {
     /**
@@ -24,7 +21,7 @@ class Imports
     {
         $results = 0;
 
-        if (!$database->getSchemaBuilder()->hasTable($oldTable)) {
+        if (! $database->getSchemaBuilder()->hasTable($oldTable)) {
             throw new \ErrorException('`'.$oldTable.'` table missing.');
         }
 

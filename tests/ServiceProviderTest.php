@@ -5,9 +5,6 @@ namespace pxgamer\XbtitToUnit3d\Functionality;
 use Orchestra\Testbench\TestCase;
 use pxgamer\XbtitToUnit3d\ServiceProvider;
 
-/**
- * Class ServiceProviderTest.
- */
 class ServiceProviderTest extends TestCase
 {
     /**

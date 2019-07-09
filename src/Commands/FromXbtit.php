@@ -2,15 +2,12 @@
 
 namespace pxgamer\XbtitToUnit3d\Commands;
 
-use App\Torrent;
 use App\User;
+use App\Torrent;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use pxgamer\XbtitToUnit3d\Functionality\Imports;
 
-/**
- * Class FromXbtit.
- */
 class FromXbtit extends Command
 {
     /**
@@ -71,13 +68,13 @@ class FromXbtit extends Command
 
         $database = DB::connection('imports');
 
-        if (!$this->option('ignore-users')) {
+        if (! $this->option('ignore-users')) {
             Imports::importTable($database, 'User', 'users', User::class);
         } else {
             $this->output->note('Ignoring users table.');
         }
 
-        if (!$this->option('ignore-torrents')) {
+        if (! $this->option('ignore-torrents')) {
             Imports::importTable($database, 'Torrent', 'files', Torrent::class);
         } else {
             $this->output->note('Ignoring torrents table.');
@@ -96,7 +93,7 @@ class FromXbtit extends Command
         ];
 
         foreach ($requiredOptions as $option) {
-            if (!key_exists($option, $options) || !$options[$option]) {
+            if (! array_key_exists($option, $options) || ! $options[$option]) {
                 throw new \InvalidArgumentException('Option `'.$option.'` not provided.');
             }
         }
