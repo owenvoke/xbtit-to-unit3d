@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Imports
 {
     /**
-     * @param Connection $database
-     * @param string $type
-     * @param string $oldTable
-     * @param string $modelName
+     * @param  Connection  $database
+     * @param  string  $type
+     * @param  string  $oldTable
+     * @param  string  $modelName
      *
      * @return int
      *
@@ -39,8 +39,8 @@ class Imports
     }
 
     /**
-     * @param string $model
-     * @param array $data
+     * @param  string  $model
+     * @param  array  $data
      * @return bool
      */
     private static function import(string $model, array $data = []): bool
