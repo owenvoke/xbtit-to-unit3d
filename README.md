@@ -1,10 +1,9 @@
-# xbtit-to-unit3d
+# XBTIT to UNIT3D
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Build Status][ico-travis]][link-travis]
 [![Style CI][ico-styleci]][link-styleci]
-[![Code Coverage][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 An artisan package to import a [XBTIT] database into [UNIT3D].
@@ -45,7 +44,7 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) and [CODE_OF_CONDUCT](.github
 
 ## Credits
 
-- [pxgamer][link-author]
+- [Owen Voke][link-author]
 - [All Contributors][link-contributors]
 
 ## License
@@ -68,5 +67,5 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [link-styleci]: https://styleci.io/repos/114135662
 [link-code-quality]: https://codecov.io/gh/HDInnovations/xbtit-to-unit3d
 [link-downloads]: https://packagist.org/packages/pxgamer/xbtit-to-unit3d
-[link-author]: https://github.com/pxgamer
+[link-author]: https://github.com/owenvoke
 [link-contributors]: ../../contributors
