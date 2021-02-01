@@ -2,7 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+[![Build Status][ico-github-actions]][link-github-actions]
 [![Style CI][ico-styleci]][link-styleci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -57,15 +57,13 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/pxgamer/xbtit-to-unit3d.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/HDInnovations/xbtit-to-unit3d/master.svg?style=flat-square
+[ico-github-actions]: https://img.shields.io/github/workflow/status/HDInnovations/xbtit-to-unit3d/Tests.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/114135662/shield
-[ico-code-quality]: https://img.shields.io/codecov/c/github/HDInnovations/xbtit-to-unit3d.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/pxgamer/xbtit-to-unit3d.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/pxgamer/xbtit-to-unit3d
-[link-travis]: https://travis-ci.org/HDInnovations/xbtit-to-unit3d
+[link-github-actions]: https://github.com/HDInnovations/xbtit-to-unit3d/actions
 [link-styleci]: https://styleci.io/repos/114135662
-[link-code-quality]: https://codecov.io/gh/HDInnovations/xbtit-to-unit3d
 [link-downloads]: https://packagist.org/packages/pxgamer/xbtit-to-unit3d
 [link-author]: https://github.com/owenvoke
 [link-contributors]: ../../contributors
